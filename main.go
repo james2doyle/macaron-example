@@ -135,7 +135,7 @@ func main() {
     m.Get("/cache/write/:key/:value", myCacheWriteHandler)
     m.Get("/cache/read/:key", myCacheReadHandler)
 
-    log.Println("Server is running...")
+    log.Println("Server is running on localhost:4000...")
     log.Println(http.ListenAndServe("0.0.0.0:4000", m))
 }
 
