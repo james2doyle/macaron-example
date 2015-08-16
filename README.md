@@ -1,6 +1,6 @@
 # macaron-example
 
-An example project using the Go framework called Macaron
+An example project using the [Macaron](https://github.com/Unknwon/macaron) framework for Go.
 
 ### Install
 
