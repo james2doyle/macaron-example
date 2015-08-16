@@ -5,10 +5,13 @@ function log(val) {
 function getText(res) {
   return res.text();
 }
-function testPost() {
-  fetch('http://localhost:4000/json')
+function get(url) {
+  fetch(url)
   .then(getText)
   .then(log);
+}
+function testPost() {
+  get('http://localhost:4000/json');
 }
 function testSubmit() {
   fetch('http://localhost:4000/contact/submit', {
@@ -22,35 +25,23 @@ function testSubmit() {
 }
 function setCookie() {
   var val = document.getElementById('cookie').value;
-  fetch('http://localhost:4000/set/cookie/' + val)
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/set/cookie/' + val);
 }
 function getCookie() {
-  fetch('http://localhost:4000/get/cookie')
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/get/cookie');
 }
 function newEntry() {
-  fetch('http://localhost:4000/database')
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/database');
 }
 function listEntries() {
-  fetch('http://localhost:4000/database/list')
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/database/list');
 }
 function writeCache() {
   var key = document.getElementById('cache-key').value;
   var value = document.getElementById('cache-value').value;
-  fetch('http://localhost:4000/cache/write/' + key + '/' + value)
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/cache/write/' + key + '/' + value);
 }
 function readCache() {
   var key = document.getElementById('cache-key').value;
-  fetch('http://localhost:4000/cache/read/' + key)
-  .then(getText)
-  .then(log);
+  get('http://localhost:4000/cache/read/' + key);
 }
